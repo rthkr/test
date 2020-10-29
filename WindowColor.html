@@ -1,0 +1,138 @@
+<html>
+<head>
+	<title>Window Color Program</title>
+	<style>
+	
+	*{
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+		
+	}
+	body{
+		background-position:center;
+		background-size:cover;
+		font-family:sans-serif;
+		margin-top:150px;
+		
+	}
+	.windowclr{
+		background-color:#F7B548;
+		width:600px;
+		margin:auto;
+		border-radius:10px;
+	}
+	form{
+		padding:20px;
+		
+	}
+	td{
+		font-size: 12pt;
+		padding: 5px; 
+		text-align: center;
+    }
+	h3{
+		margin:10px 0px 0px 0px;
+		font-size: 14pt;
+	}
+	#bname{
+		width:100%;
+		height:70px;
+	}   
+	input[type=button]{
+		border-radius:10px;
+		font-size:16px;
+		line-height:30px;
+		width:150px;	
+		margin:0px 10px;
+		background-color:#BC8F8F;
+		color:black;
+		cursor:pointer;
+		border:2px solid #366473;
+		transition:0.25px;
+		font-weight: bold;
+		padding:6px;
+		
+	}
+	.btnred{
+		background-color:red !important;
+	}
+	.btngreen{
+		background-color: #008000  !important;
+	}
+	.btnblue{
+		background-color: #0000ff  !important;
+	}
+
+	
+	</style>
+	
+	<script language="javascript">
+		function opnewwindow(){
+		win1=open("Calculator2.html","cal1","menubar=no, toolbar=yes");
+		}
+		function closenewwindow(){
+			if(!win1.closed)    
+				win1.close()
+			else
+			alert("warning: window is not open");
+		}
+		function closewindow(){
+			if(confirm("close this window")){
+				window.close()
+			}
+		}
+		function changebkColorRed(){
+			if(!win1.closed) {   
+				win1.document.body.style.backgroundColor="#ff0000"
+				win1.focus()
+				}
+			else
+			alert("warning: window is not open");
+		}
+		function changebkColorGreen(){
+			if(!win1.closed) {   
+				win1.document.body.style.backgroundColor="#008000"
+				win1.focus()
+				}
+			else
+			alert("warning: window is not open");
+		}
+		function changebkColorBlue(){
+			if(!win1.closed) {   
+				win1.document.body.style.backgroundColor="0000ff"
+				win1.focus()
+				}
+			else
+			alert("warning: window is not open");
+		}
+	</script>
+	
+</head>
+<body>
+	<div class="windowclr">
+		<form name="myForm">
+	
+			<table align="center">
+				<tr>
+					<td colspan="3"><h3>Window Program</h3></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="open cal.html" onclick="opnewwindow()"></td>
+					<td><input type="button" value="close cal.html" onclick="closenewwindow()"></td>
+					<td><input type="button" value="close this window" onclick="closewindow()"></td>
+				</tr>
+				<tr>
+					<td colspan="3"><h3>Change background of new window</h3></td>
+				</tr>
+				<tr id="bname">
+					<td><input type="button" value="Red" class="btnred" onclick="changebkColorRed()"></td>
+					<td><input type="button" value="Green" class="btngreen" onclick="changebkColorGreen()"></td>
+					<td><input type="button" value="Blue" class="btnblue" onclick="changebkColorBlue()"></td>
+				</tr>
+			</table>
+	
+		</form>
+	</div>
+</body>
+</html>
